@@ -1,7 +1,7 @@
 <!-- Desktop sidebar -->
 <aside class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0">
     <div class="py-4 text-gray-500 dark:text-gray-400">
-        <a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="#">
+        <a class="mr-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="#">
             logo
         </a>
 
@@ -10,7 +10,7 @@
             <li class="relative px-6">
                 <span class="absolute inset-y-0 right-0 w-1 bg-blue-600 rounded-tl-lg rounded-bl-lg"
                     aria-hidden="true"></span>
-                <a href="<?= isset($base_url_link) ? $base_url_link : '' ?>index.php"
+                <a href="index.php"
                     class="block py-2.5 px-4 flex items-center space-x-2 bg-gray-800 text-white hover:bg-gray-800 transition duration-200 transform hover:text-white rounded">
                     <svg class="w-6 h-6 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
@@ -53,6 +53,19 @@
                     </div>
                     <div x-show="open"
                         class="text-sm border-r-2 border-gray-800 mr-6 my-2.5 pr-2.5 flex flex-col gap-y-1">
+                        <a href="add-category.php"
+                            class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
+                            الوظائف
+                        </a>
+                        <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
+                            المطارات
+                        </a>
+                        <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
+                            الطراز
+                        </a>
+                    </div>
+                    {{-- <div x-show="open"
+                        class="text-sm border-r-2 border-gray-800 mr-6 my-2.5 pr-2.5 flex flex-col gap-y-1">
 
                         <!--control category-->
                         <div class="block" x-data="{ open: false }">
@@ -87,7 +100,7 @@
                             </div>
                             <div x-show="open"
                                 class="text-sm border-l-2 border-gray-800 ml-6 my-2.5 pl-2.5 flex flex-col gap-y-1">
-                                <a href="<?= isset($base_url_link) ? $base_url_link : '' ?>add/add-category.php"
+                                <a href="add-category.php"
                                     class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
                                     Add
                                 </a>
@@ -192,12 +205,84 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
 
                 <!-- add item -->
 
             </li>
+
+            {{-- بيانات الموظفين --}}
+            <li class="relative px-6 mt-2">
+                <span class="absolute inset-y-0 right-0 w-1 bg-blue-600 rounded-tl-lg rounded-bl-lg"
+                    aria-hidden="true"></span>
+                <!-- DROPDOWN LINK -->
+                <div class="block" x-data="{ open: false }">
+                    <div @click="open = !open"
+                        class="flex items-center justify-between hover:bg-gray-800 transition duration-200 transform hover:text-white cursor-pointer py-2.5 px-4 rounded">
+                        <div class="flex items-center space-x-2">
+                            <i class="icon-nav text-xl fa-solid fa-file me-2"></i>
+                            <span>بيانات الموظفين </span>
+                        </div>
+                        <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7">
+                            </path>
+                        </svg>
+                        <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div x-show="open"
+                        class="text-sm border-r-2 border-gray-800 mr-6 my-2.5 pr-2.5 flex flex-col gap-y-1">
+                        <a href="<?= isset($base_url_link) ? $base_url_link : '' ?>add/add-category.php"
+                            class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
+                            اضافة موظف 
+                        </a>
+                        <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
+                            عرض الموظفين
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="relative px-6 mt-2">
+                <span class="absolute inset-y-0 right-0 w-1 bg-blue-600 rounded-tl-lg rounded-bl-lg"
+                    aria-hidden="true"></span>
+                <!-- DROPDOWN LINK -->
+                <div class="block" x-data="{ open: false }">
+                    <div @click="open = !open"
+                        class="flex items-center justify-between hover:bg-gray-800 transition duration-200 transform hover:text-white cursor-pointer py-2.5 px-4 rounded">
+                        <div class="flex items-center space-x-2">
+                            <i class="icon-nav text-xl fas fa-edit me-2"></i>
+                            <span>الرحلات</span>
+                        </div>
+                        <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7">
+                            </path>
+                        </svg>
+                        <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div x-show="open"
+                        class="text-sm border-r-2 border-gray-800 mr-6 my-2.5 pr-2.5 flex flex-col gap-y-1">
+                        <a href=""
+                            class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
+                            اضافة رحلة 
+                        </a>
+                        <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
+                            عرض الرحلات
+                        </a>
+                    </div>
+                </div>
+            </li>
+
         </ul>
 
         <!-- my profile -->
