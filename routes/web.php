@@ -92,3 +92,7 @@ Route::get('/', function () {
 Route::get('/dashboard-admin', function () {
   return view('admin.index');
 });
+
+Route::get('/new-login', function () {
+  return view('auth.login-');
+});

@@ -1164,6 +1164,46 @@ print and (-ms-high-contrast:none) {
     margin-right: auto
 }
 
+.mx-1 {
+    margin: 0 .25rem;
+}
+
+.mx-2 {
+    margin: 0 .5rem;
+}
+
+.mx-3 {
+    margin: 0 .75rem;
+}
+
+.mx-4 {
+    margin: 0 1rem;
+}
+
+.mx-5 {
+    margin: 0 1.25rem;
+}
+
+.mx-6 {
+    margin: 0 1.5rem;
+}
+
+.mx-7 {
+    margin: 0 1.75rem;
+}
+
+.mx-8 {
+    margin: 0 2rem;
+}
+
+.mx-9 {
+    margin: 0 2.25rem;
+}
+
+.mx-10 {
+    margin: 0 2.5rem;
+}
+
 .-mx-6 {
     margin-left: -1.5rem;
     margin-right: -1.5rem
