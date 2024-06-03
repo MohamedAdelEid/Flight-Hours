@@ -46,7 +46,7 @@ Route::prefix('front')->name('front')->group(function () {
   Route::post('/Airports/add', [Airports_categoriecontroller::class, 'store'])->Middleware('auth')->name('Airports.store');
   Route::get('/Airports/edit', [Airports_categoriecontroller::class, 'edit'])->Middleware('auth')->name('Airports.edit');
 
-  //----------*/ employees ---- 
+  //----------*/ employees ----
   Route::get('/Employee', [Employeecontroller::class, 'Employee_index'])->Middleware('auth')->name('Employee.index');
   Route::get('/Employee/view', [Employeecontroller::class, 'Employee_search'])->Middleware('auth')->name('Employee_search');
 
@@ -73,9 +73,9 @@ Route::prefix('admin')->name('admin')->group(function () {
 
 //***************** +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++******************
 
-//***************** */ Captin Design ******************
+//***************** */ Captain Design ******************
 
-Route::prefix('Captin')->name('Captin')->group(function () {
+Route::prefix('Captain')->name('Captain')->group(function () {
   Route::get('/', CaptinHomecontroller::class)->Middleware('captin')->name('index');
   Route::view('/login', 'back.auth.login');
   Route::view('/register', 'back.auth.register');
@@ -84,9 +84,6 @@ Route::prefix('Captin')->name('Captin')->group(function () {
 
 });
 
-Route::get('/', function () {
-  return view('welcome');
-});
 
 
 Route::get('/dashboard-admin', function () {
