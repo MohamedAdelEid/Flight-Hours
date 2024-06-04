@@ -17,7 +17,7 @@ class User extends Authenticatable
     {
        $this->notify(new updatedEmailnotification($token)) ;
     }
-  
+
 
     /**
      * The attributes that are mass assignable.
@@ -49,4 +49,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function aircrafts(){
+        return $this->hasMany(Aircraft::class);
+    }
+    public function airports(){
+        return $this->hasMany(Airport::class);
+    }
+    public function jobs(){
+        return $this->hasMany(Job::class);
+    }
+    public function crews(){
+        return $this->hasMany(Crew::class);
+    }
+    public function flights(){
+        return $this->hasMany(Flight::class);
+    }
 }

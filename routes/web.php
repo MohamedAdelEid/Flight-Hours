@@ -84,7 +84,9 @@ Route::prefix('Captain')->name('Captain')->group(function () {
 
 });
 
-
+Route::get('/', function () {
+    return view('auth.login-');
+});
 
 Route::get('/dashboard-admin', function () {
   return view('admin.index');

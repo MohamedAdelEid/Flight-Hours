@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\airport;
+use App\Models\Airport;
 use Illuminate\Http\Request;
 
 class AirportController extends Controller
@@ -34,7 +34,7 @@ class AirportController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(airport $airport)
+    public function show(Airport $airport)
     {
         //
     }
@@ -42,7 +42,7 @@ class AirportController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(airport $airport)
+    public function edit(Airport $airport)
     {
         //
     }
@@ -50,7 +50,7 @@ class AirportController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, airport $airport)
+    public function update(Request $request, Airport $airport)
     {
         //
     }
@@ -58,7 +58,7 @@ class AirportController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(airport $airport)
+    public function destroy(Airport $airport)
     {
         //
     }
