@@ -41,7 +41,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body style='font-family: "Tajawal", sans-serif'>
 
     <div class="login vh-100">
         <div class="d-block d-lg-flex d-xl-flex h-100 w-100">
@@ -68,8 +68,7 @@
                                 <input type="password" id="password" name="" class="input auth__password"
                                     required>
                                 <span class="password__icon">
-                                    <i
-                                        class="text-primary fs-6 fw-bold fa-solid fa-eye-slash eye cursor-pointer"></i>
+                                    <i class="text-primary fs-6 fw-bold fa-solid fa-eye-slash eye cursor-pointer"></i>
                                 </span>
                             </div>
 
