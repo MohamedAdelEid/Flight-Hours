@@ -92,6 +92,6 @@ Route::get('/dashboard-admin', function () {
   return view('admin.index');
 });
 
-Route::get('/new-login', function () {
-  return view('auth.login-');
-});
+Route::get('/homePage', function () {
+  return view('admin.index');
+})->name('user.index');

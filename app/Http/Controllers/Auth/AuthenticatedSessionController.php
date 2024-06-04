@@ -29,8 +29,9 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return to_route('frontindex');
+        return redirect()->route('user.index');
     }
+
 
     /**
      * Destroy an authenticated session.
