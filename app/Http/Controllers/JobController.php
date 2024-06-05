@@ -3,63 +3,80 @@
 namespace App\Http\Controllers;
 
 use App\Models\Job;
+use App\Models\JobType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class JobController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $jobs = Job::all()->sortByDesc('created_at');
+        return view('user.job.index', [
+            'jobs' => $jobs
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        $job_types = JobType::all();
+        return view('user.job.add',['job_types'=>$job_types]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'job_name' => ['required', 'string', 'max:255'],
+            'type_id' => ['required|exists:job_types,id'],
+        ], [
+            'job_name.required' => 'The job name field is required.',
+            'job_name.string' => 'The job name must be a string.',
+            'job_name.max' => 'The job name may not be greater than 255 characters.',
+        ]);
+
+        Job::create([
+            'job_name' => $validatedData['job_name'],
+            'type_id' => $validatedData['type_id'],
+            'user_id' => Auth::id()
+        ]);
+
+        return redirect()->route('job.create')->with('success', 'Job Created Successfully');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Job $job)
     {
-        //
+        return view('job.show', ['job' => $job]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Job $job)
     {
-        //
+        return view('user.job.edit', [
+            'job' => $job
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Job $job)
     {
-        //
+        $validatedData = $request->validate([
+            'job_name' => ['required', 'string', 'max:255'],
+            'type_id' => ['required|exists:job_types,id'],
+        ], [
+            'job_name.required' => 'The job name field is required.',
+            'job_name.string' => 'The job name must be a string.',
+            'job_name.max' => 'The job name may not be greater than 255 characters.',
+        ]);
+
+        $job->update([
+            'job_name' => $validatedData['job_name'],
+            'type_id' => $validatedData['type_id'],
+        ]);
+
+        return redirect()->back()->with('success', 'Job Updated Successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Job $job)
     {
-        //
+        $job->delete();
+        return redirect()->route('job.index')->with('success', 'Job deleted successfully');
     }
 }

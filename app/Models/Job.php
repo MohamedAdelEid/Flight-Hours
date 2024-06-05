@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Job extends Model
 {
     use HasFactory;
+    protected $table = 'jobs';
     protected $fillable = [
-        'job_name', 'user_id'
+        'job_name','type_id','user_id'
     ];
 
     public function user(){
@@ -18,5 +19,8 @@ class Job extends Model
 
     public function crews(){
         return $this->hasMany(Crew::class);
+    }
+    public function job_type(){
+        return $this->belongsTo(JobType::class,'type_id');
     }
 }

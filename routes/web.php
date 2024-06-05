@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AircraftController;
+use App\Http\Controllers\AirportController;
+use App\Http\Controllers\JobController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontHomecontroller;
 use App\Http\Controllers\back\backHomecontroller;
@@ -92,6 +95,10 @@ Route::get('/dashboard-admin', function () {
   return view('admin.index');
 });
 
-Route::get('/homePage', function () {
+Route::get('/home-page', function () {
   return view('admin.index');
 })->name('user.index');
+
+Route::resource('job', JobController::class);
+Route::resource('aircraft', AircraftController::class);
+Route::resource('airport', AirportController::class);
