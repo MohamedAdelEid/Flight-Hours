@@ -50,7 +50,8 @@
                 <div class="d-flex align-items-center justify-content-center p-5 h-100">
 
                     <div class="content-login">
-                        <form action="">
+                        <form action="{{ route('login') }}" method="post">
+                            @csrf
                             <div class="text-center mb-5">
                                 <p class="welcome">welcome to</p>
                                 <p class="logo">FLIGHT <span>HOURS</span></p>
@@ -59,17 +60,27 @@
                             {{-- email --}}
                             <div class="mb-3">
                                 <label for="email" class="label">البريد الالكتروني</label>
-                                <input type="email" id="email" name="text" class="input" required>
+                                <input type="email" id="email" name="email" class="input" required>
+                                @error('email')
+                                <div class="alert alert-danger">
+                                    <span class="text-danger">{{ $message }}</span>
+                                </div>
+                                @enderror
                             </div>
 
                             {{-- password --}}
                             <div class="position-relative">
                                 <label for="password" class="label">كلمة المرور</label>
-                                <input type="password" id="password" name="" class="input auth__password"
+                                <input type="password" id="password" name="password" class="input auth__password"
                                     required>
                                 <span class="password__icon">
                                     <i class="text-primary fs-6 fw-bold fa-solid fa-eye-slash eye cursor-pointer"></i>
                                 </span>
+                                @error('password')
+                                <div class="alert alert-danger">
+                                    <span class="text-danger">{{ $message }}</span>
+                                </div>
+                                @enderror
                             </div>
 
                             <a href="" class="forget-password">هل نسيت كلمة السر ؟ </a>

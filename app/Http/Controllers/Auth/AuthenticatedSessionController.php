@@ -17,7 +17,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View
     {
-        return view('front.auth.login');
+        return view('auth.login-');
     }
 
     /**
@@ -29,8 +29,9 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return to_route('frontindex');
+        return redirect()->route('user.index');
     }
+
 
     /**
      * Destroy an authenticated session.
