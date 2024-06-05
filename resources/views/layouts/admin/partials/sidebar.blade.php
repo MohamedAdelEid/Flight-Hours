@@ -1,5 +1,5 @@
 <!-- Desktop sidebar -->
-<aside class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0">
+<aside class="z-20 hidden w-65 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0">
     <div class="py-4 text-gray-500 dark:text-gray-400">
         <a class="mr-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="#">
             logo
@@ -53,159 +53,106 @@
                     </div>
                     <div x-show="open"
                         class="text-sm border-r-2 border-gray-800 mr-6 my-2.5 pr-2.5 flex flex-col gap-y-1">
-                        <a href="add-category.php"
-                            class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
-                            الوظائف
-                        </a>
-                        <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
-                            المطارات
-                        </a>
-                        <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
-                            الطراز
-                        </a>
+
+                        <!--control employees-->
+                        <div class="block" x-data="{ open: false }">
+                            <div @click="open = !open"
+                                class="flex items-center justify-between hover:bg-gray-800 hover:text-white cursor-pointer py-2.5 pl-4 pr-2 rounded transition duration-200 transform">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fa-solid fa-users me-2"></i>
+                                    <span>الوظائف</span>
+                                </div>
+                                <svg x-show="open" class="w-5 h-6" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 15l7-7 7 7">
+                                    </path>
+                                </svg>
+                                <svg x-show="!open" class="w-5 h-6" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div x-show="open"
+                                class="text-sm border-r-2 border-gray-800 mr-3.5 ml-4 mb-2 mt-1 pr-2 flex flex-col gap-y-1">
+                                <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
+                                    اضافة وظيفة
+                                </a>
+                                <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
+                                    عرض الوظائف
+                                </a>
+                            </div>
+                        </div>
+
+                        <!--control airports -->
+                        <div class="block" x-data="{ open: false }">
+                            <div @click="open = !open"
+                                class="flex items-center justify-between hover:bg-gray-800 hover:text-white cursor-pointer py-2.5 pl-4 pr-2 rounded transition duration-200 transform">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fa-solid fa-plane-departure me-2"></i>
+                                    <span>المطارات</span>
+                                </div>
+                                <svg x-show="open" class="w-5 h-6" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 15l7-7 7 7">
+                                    </path>
+                                </svg>
+                                <svg x-show="!open" class="w-5 h-6" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div x-show="open"
+                                class="text-sm border-r-2 border-gray-800 mr-3.5 ml-4 mb-2 mt-1 pr-2 flex flex-col gap-y-1">
+                                <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
+                                    اضافة مطار
+                                </a>
+                                <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
+                                    عرض المطارات
+                                </a>
+                            </div>
+                        </div>
+
+                        <!--control planes -->
+                        <div class="block" x-data="{ open: false }">
+                            <div @click="open = !open"
+                                class="flex items-center justify-between hover:bg-gray-800 hover:text-white cursor-pointer py-2.5 pl-4 pr-2 rounded transition duration-200 transform">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fa-solid fa-plane me-2"></i>
+                                    <span>الطائرات</span>
+                                </div>
+                                <svg x-show="open" class="w-5 h-6" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 15l7-7 7 7">
+                                    </path>
+                                </svg>
+                                <svg x-show="!open" class="w-5 h-6" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div x-show="open"
+                                class="text-sm border-r-2 border-gray-800 mr-3.5 ml-4 mb-2 mt-1 pr-2 flex flex-col gap-y-1">
+                                <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
+                                    اضافة طائرة
+                                </a>
+                                <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
+                                    عرض الطائرات
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- add item in frist control -->
+
                     </div>
-                    {{-- <div x-show="open"
-                        class="text-sm border-r-2 border-gray-800 mr-6 my-2.5 pr-2.5 flex flex-col gap-y-1">
-
-                        <!--control category-->
-                        <div class="block" x-data="{ open: false }">
-                            <div @click="open = !open"
-                                class="item-nav flex items-center justify-between hover:bg-gray-800 hover:text-white cursor-pointer py-2.5 pl-4 pr-2 rounded transition duration-200 transform">
-                                <div class="flex items-center space-x-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="svg-nav" width="24"
-                                        height="24" viewBox="0 0 24 24" id="category">
-                                        <g transform="translate(2 2)">
-                                            <path
-                                                d="M14.0755097,2.66453526e-15 L17.4614756,2.66453526e-15 C18.8637443,2.66453526e-15 20,1.1458518 20,2.55996321 L20,5.97452492 C20,7.38863633 18.8637443,8.53448813 17.4614756,8.53448813 L14.0755097,8.53448813 C12.673241,8.53448813 11.5369853,7.38863633 11.5369853,5.97452492 L11.5369853,2.55996321 C11.5369853,1.1458518 12.673241,2.66453526e-15 14.0755097,2.66453526e-15"
-                                                opacity=".4"></path>
-                                            <path
-                                                d="M5.9244903,11.4655119 C7.32675901,11.4655119 8.46301469,12.6113637 8.46301469,14.0254751 L8.46301469,17.4400368 C8.46301469,18.8531901 7.32675901,20 5.9244903,20 L2.53852439,20 C1.13625568,20 8.8817842e-16,18.8531901 8.8817842e-16,17.4400368 L8.8817842e-16,14.0254751 C8.8817842e-16,12.6113637 1.13625568,11.4655119 2.53852439,11.4655119 L5.9244903,11.4655119 Z M17.4614756,11.4655119 C18.8637443,11.4655119 20,12.6113637 20,14.0254751 L20,17.4400368 C20,18.8531901 18.8637443,20 17.4614756,20 L14.0755097,20 C12.673241,20 11.5369853,18.8531901 11.5369853,17.4400368 L11.5369853,14.0254751 C11.5369853,12.6113637 12.673241,11.4655119 14.0755097,11.4655119 L17.4614756,11.4655119 Z M5.9244903,7.99360578e-15 C7.32675901,7.99360578e-15 8.46301469,1.1458518 8.46301469,2.55996321 L8.46301469,5.97452492 C8.46301469,7.38863633 7.32675901,8.53448813 5.9244903,8.53448813 L2.53852439,8.53448813 C1.13625568,8.53448813 8.8817842e-16,7.38863633 8.8817842e-16,5.97452492 L8.8817842e-16,2.55996321 C8.8817842e-16,1.1458518 1.13625568,7.99360578e-15 2.53852439,7.99360578e-15 L5.9244903,7.99360578e-15 Z">
-                                            </path>
-                                        </g>
-                                    </svg>
-                                    <span>Category</span>
-                                </div>
-                                <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 15l7-7 7 7">
-                                    </path>
-                                </svg>
-                                <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7">
-                                    </path>
-                                </svg>
-                            </div>
-                            <div x-show="open"
-                                class="text-sm border-l-2 border-gray-800 ml-6 my-2.5 pl-2.5 flex flex-col gap-y-1">
-                                <a href="add-category.php"
-                                    class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
-                                    Add
-                                </a>
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
-                                    View
-                                </a>
-                            </div>
-                        </div>
-
-                        <!--control sub category-->
-                        <div class="block" x-data="{ open: false }">
-                            <div @click="open = !open"
-                                class="flex items-center justify-between hover:bg-gray-800 hover:text-white cursor-pointer py-2.5 pl-4 pr-2 rounded transition duration-200 transform">
-                                <div class="flex items-center space-x-2">
-                                    <i class="icon-nav fa-solid fa-layer-group text-xl"></i>
-                                    <span>Sub Category</span>
-                                </div>
-                                <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 15l7-7 7 7">
-                                    </path>
-                                </svg>
-                                <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7">
-                                    </path>
-                                </svg>
-                            </div>
-                            <div x-show="open"
-                                class="text-sm border-l-2 border-gray-800 ml-6 my-2.5 pl-2.5 flex flex-col gap-y-1">
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
-                                    Add
-                                </a>
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
-                                    View
-                                </a>
-                            </div>
-                        </div>
-
-                        <!--control Brand-->
-                        <div class="block" x-data="{ open: false }">
-                            <div @click="open = !open"
-                                class="flex items-center justify-between hover:bg-gray-800 hover:text-white cursor-pointer py-2.5 pl-4 pr-2 rounded transition duration-200 transform">
-                                <div class="flex items-center space-x-2">
-                                    <i class="fa-solid fa-chart-simple text-lg"></i>
-                                    <span>Brand</span>
-                                </div>
-                                <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 15l7-7 7 7">
-                                    </path>
-                                </svg>
-                                <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7">
-                                    </path>
-                                </svg>
-                            </div>
-                            <div x-show="open"
-                                class="text-sm border-l-2 border-gray-800 ml-6 my-2.5 pl-2.5 flex flex-col gap-y-1">
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
-                                    Add
-                                </a>
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
-                                    View
-                                </a>
-                            </div>
-                        </div>
-
-                        <!--control sub admin-->
-                        <div class="block" x-data="{ open: false }">
-                            <div @click="open = !open"
-                                class="flex items-center justify-between hover:bg-gray-800 hover:text-white cursor-pointer py-2.5 pl-4 pr-2 rounded transition duration-200 transform">
-                                <div class="flex items-center space-x-2">
-                                    <i class="fa-solid fa-users"></i>
-                                    <span>Sub Admins</span>
-                                </div>
-                                <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 15l7-7 7 7">
-                                    </path>
-                                </svg>
-                                <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7">
-                                    </path>
-                                </svg>
-                            </div>
-                            <div x-show="open"
-                                class="text-sm border-l-2 border-gray-800 ml-6 my-2.5 pl-2.5 flex flex-col gap-y-1">
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
-                                    Add
-                                </a>
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
-                                    View
-                                </a>
-                            </div>
-                        </div>
-                    </div> --}}
                 </div>
 
                 <!-- add item -->
@@ -224,13 +171,13 @@
                             <i class="icon-nav text-xl fa-solid fa-file me-2"></i>
                             <span>بيانات الموظفين </span>
                         </div>
-                        <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
+                        <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7">
                             </path>
                         </svg>
-                        <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
+                        <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
                             </path>
                         </svg>
@@ -239,7 +186,7 @@
                         class="text-sm border-r-2 border-gray-800 mr-6 my-2.5 pr-2.5 flex flex-col gap-y-1">
                         <a href="<?= isset($base_url_link) ? $base_url_link : '' ?>add/add-category.php"
                             class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
-                            اضافة موظف 
+                            اضافة موظف
                         </a>
                         <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
                             عرض الموظفين
@@ -259,22 +206,21 @@
                             <i class="icon-nav text-xl fas fa-edit me-2"></i>
                             <span>الرحلات</span>
                         </div>
-                        <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
+                        <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7">
                             </path>
                         </svg>
-                        <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
+                        <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
                             </path>
                         </svg>
                     </div>
                     <div x-show="open"
                         class="text-sm border-r-2 border-gray-800 mr-6 my-2.5 pr-2.5 flex flex-col gap-y-1">
-                        <a href=""
-                            class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
-                            اضافة رحلة 
+                        <a href="" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
+                            اضافة رحلة
                         </a>
                         <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
                             عرض الرحلات

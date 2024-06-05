@@ -40,7 +40,7 @@ body {
 
 .main-page::-webkit-scrollbar,
 aside::-webkit-scrollbar {
-    width: .5rem;
+    width: .2rem;
     height: .5rem;
 }
 
