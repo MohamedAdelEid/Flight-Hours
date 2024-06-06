@@ -34,4 +34,5 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    {{-- cdn link datatable style --}}
+    {{-- link livewire style --}}
+    @livewireStyles
