@@ -23,7 +23,7 @@
             {{-- Start table --}}
             <div class="w-full overflow-hidden rounded-lg shadow-xs">
                 <div class="w-full overflow-x-auto">
-                    <table class="w-full whitespace-no-wrap">
+                    <table class="w-full whitespace-no-wrap" id="myTable">
                         <thead>
                             <tr
                                 class="text-sm text-center font-semibold tracking-wide text-gray-500 border-b dark:border-gray-700 bg-gray-50 dark:text-white dark:bg-gray-800">
