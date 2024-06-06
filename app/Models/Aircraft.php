@@ -12,6 +12,9 @@ class Aircraft extends Model
     protected $fillable = [
         'aircraft_name',
         'aircraft_code',
+        'manufacturer',
+        'status',
+        'registration_number',
         'user_id',
     ];
 
