@@ -20,27 +20,30 @@ class JobController extends Controller
     public function create()
     {
         $job_types = JobType::all();
-        return view('user.job.add',['job_types'=>$job_types]);
+        return view('user.job.add', ['job_types' => $job_types]);
     }
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'job_name' => ['required', 'string', 'max:255'],
-            'type_id' => ['required|exists:job_types,id'],
-        ], [
-            'job_name.required' => 'The job name field is required.',
-            'job_name.string' => 'The job name must be a string.',
-            'job_name.max' => 'The job name may not be greater than 255 characters.',
-        ]);
+        // $validatedData = $request->validate([
+        //     'job_name' => ['required', 'string', 'max:255'],
+        //     'type_id' => ['required|exists:job_types,id'],
+        //     'status' => ['in:active, inactive']
+        // ], [
+        //     'job_name.required' => 'The job name field is required.',
+        //     'job_name.string' => 'The job name must be a string.',
+        //     'job_name.max' => 'The job name may not be greater than 255 characters.',
+        //     'status.in' => 'يجب أن تكون الحالة إما "نشطة" أو "غير نشطة"',
+        // ]);
 
         Job::create([
-            'job_name' => $validatedData['job_name'],
-            'type_id' => $validatedData['type_id'],
-            'user_id' => Auth::id()
+            'job_name' => $request->job_name,
+            'type_id' => $request->type_id,
+            'status' => $request->status,
+            'user_id' => Auth::guard('web')->id(),
         ]);
 
-        return redirect()->route('job.create')->with('success', 'Job Created Successfully');
+        return redirect()->route('job.index')->with('successCreate', 'تم إضافة وظيفة بنجاح');
     }
 
     public function show(Job $job)

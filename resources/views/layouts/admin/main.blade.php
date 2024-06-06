@@ -34,7 +34,12 @@
 
             <!-- ===== Footer Script  Start ===== -->
             @include('layouts.admin.partials.footer-script')
+            @stack('script')
             <!-- ===== Footer Script End ===== -->
+
+            <!-- ===== Alerts Start ===== -->
+            @yield('alerts')
+            <!-- ===== Alerts End ===== -->
 
         </div>
     </div>

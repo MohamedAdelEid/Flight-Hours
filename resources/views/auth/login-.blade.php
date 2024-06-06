@@ -92,7 +92,7 @@
                 </div>
             </div>
 
-            <div class="images-login col-lg-6 col-xl-5 d-none d-lg-block d-xl-block">
+            <div class="images-login col-lg-6 col-xl-5 d-none d-lg-block d-xl-block" dir="ltr">
                 <div class="w-100 h-100 d-flex align-items-center">
                     <div class="slider">
                         <div class="list">

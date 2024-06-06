@@ -10,10 +10,20 @@
 }
 
 body {
-    /* font-family: "Tajawal", sans-serif !important; */
+    font-family: "Tajawal", sans-serif !important;
+    /* font-family: "Rubik", sans-serif !important; */
 }
 
-.cursor-pointer{
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.cursor-pointer {
     cursor: pointer;
 }
 
@@ -63,7 +73,7 @@ aside::-webkit-scrollbar-thumb {
     width: 700px;
     max-width: 700px;
     height: 500px;
-    margin: auto;
+    margin: 0 50px;
     position: relative;
     overflow: hidden;
 }
@@ -199,11 +209,11 @@ aside::-webkit-scrollbar-thumb {
     margin-top: -10px;
 }
 
-.content-login .logo span{
+.content-login .logo span {
     color: var(--main-color);
 }
 
-.forget-password{
+.forget-password {
     text-decoration: none;
     font-size: 15px;
     margin: 10px 0;
@@ -213,11 +223,11 @@ aside::-webkit-scrollbar-thumb {
     font-weight: 500;
 }
 
-.forget-password:hover{
+.forget-password:hover {
     color: #003cbe;
 }
 
-.primary-btn{
+.primary-btn {
     padding: 12px;
     background-color: rgb(51, 51, 51);
     color: white;
@@ -227,25 +237,30 @@ aside::-webkit-scrollbar-thumb {
 
 }
 
-.primary-btn:hover{
+.primary-btn:hover {
     background-color: black;
 }
 
-.password__icon{
+.password__icon {
     position: absolute;
     left: 15px;
     bottom: 8px;
 }
 
-.fa-solid.eye{
+.fa-solid.eye {
     transition: .2s;
 }
 
-.fa-solid.eye:hover{
+.fa-solid.eye:hover {
     color: #003cbe !important;
 }
 
 /* end style login */
+
+/* start style add job */
+
+
+/* end style add job */
 
 @media (max-width:768px) {
     .input {
@@ -253,7 +268,7 @@ aside::-webkit-scrollbar-thumb {
         font-size: 15px;
     }
 
-    .label{
+    .label {
         font-size: 19px;
     }
 
@@ -265,11 +280,11 @@ aside::-webkit-scrollbar-thumb {
         font-size: 25px;
     }
 
-    .forget-password{
+    .forget-password {
         font-size: 15px;
     }
 
-    .primary-btn{
+    .primary-btn {
         font-size: 16px;
         padding: 12px;
     }

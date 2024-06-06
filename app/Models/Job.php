@@ -10,17 +10,23 @@ class Job extends Model
     use HasFactory;
     protected $table = 'jobs';
     protected $fillable = [
-        'job_name','type_id','user_id'
+        'job_name',
+        'type_id',
+        'status',
+        'user_id'
     ];
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 
-    public function crews(){
+    public function crews()
+    {
         return $this->hasMany(Crew::class);
     }
-    public function job_type(){
-        return $this->belongsTo(JobType::class,'type_id');
+    public function job_type()
+    {
+        return $this->belongsTo(JobType::class, 'type_id');
     }
 }

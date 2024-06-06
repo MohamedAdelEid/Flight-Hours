@@ -77,10 +77,12 @@
                             </div>
                             <div x-show="open"
                                 class="text-sm border-r-2 border-gray-800 mr-3.5 ml-4 mb-2 mt-1 pr-2 flex flex-col gap-y-1">
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
+                                <a href="{{ route('job.create') }}"
+                                    class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
                                     اضافة وظيفة
                                 </a>
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
+                                <a href="{{ route('job.index') }}"
+                                    class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
                                     عرض الوظائف
                                 </a>
                             </div>
