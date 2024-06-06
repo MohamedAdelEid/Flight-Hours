@@ -48,8 +48,8 @@
                                             {{$job->job_name}}</th>
                                         <td class="px-4 py-3 text-center">{{$job->job_type->job_type}}</td>
                                         <td class="px-4 py-3 text-center">{{$job->status}}</td>
-                                        <td class="px-4 py-3 text-center">{{$category->created_at->format('Y-m-d')}}</td>
-                                        <td class="px-4 py-3 text-center">{{$category->updated_at->format('Y-m-d')}}</td>
+                                        <td class="px-4 py-3 text-center">{{$job->created_at->format('Y-m-d')}}</td>
+                                        <td class="px-4 py-3 text-center">{{$job->updated_at->format('Y-m-d')}}</td>
                                         <td class="py-3 flex items-center justify-center">
                                             <a href="{{route('job.edit',$job->id)}}" class="me-1 py-1" ><p class="edit"><i class="ti ti-edit"></i> Edit</p></a>
                                             <button  wire:click="delete({{$job->id}})"
