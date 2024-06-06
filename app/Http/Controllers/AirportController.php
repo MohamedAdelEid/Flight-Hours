@@ -25,13 +25,14 @@ class AirportController extends Controller
             'airport_name' => ['required', 'string', 'max:255'],
             'airport_code' => ['required', 'string', 'max:10'],
         ], [
-            'airport_name.required' => 'The airport name field is required.',
-            'airport_name.string' => 'The airport name must be a string.',
-            'airport_name.max' => 'The airport name may not be greater than 255 characters.',
-            'airport_code.required' => 'The airport code field is required.',
-            'airport_code.string' => 'The airport code must be a string.',
-            'airport_code.max' => 'The airport code may not be greater than 10 characters.',
+            'airport_name.required' => 'حقل اسم المطار مطلوب.',
+            'airport_name.string' => 'يجب أن يكون اسم المطار نصًا.',
+            'airport_name.max' => 'قد لا يكون اسم المطار أكبر من 255 حرفًا.',
+            'airport_code.required' => 'حقل رمز المطار مطلوب.',
+            'airport_code.string' => 'يجب أن يكون رمز المطار نصًا.',
+            'airport_code.max' => 'قد لا يكون رمز المطار أكبر من 10 أحرف.',
         ]);
+
 
         Airport::create([
             'airport_name' => $validatedData['airport_name'],

@@ -25,16 +25,19 @@ class JobController extends Controller
 
     public function store(Request $request)
     {
-        // $validatedData = $request->validate([
-        //     'job_name' => ['required', 'string', 'max:255'],
-        //     'type_id' => ['required|exists:job_types,id'],
-        //     'status' => ['in:active, inactive']
-        // ], [
-        //     'job_name.required' => 'The job name field is required.',
-        //     'job_name.string' => 'The job name must be a string.',
-        //     'job_name.max' => 'The job name may not be greater than 255 characters.',
-        //     'status.in' => 'يجب أن تكون الحالة إما "نشطة" أو "غير نشطة"',
-        // ]);
+        $validatedData = $request->validate([
+            'job_name' => ['required', 'string', 'max:255'],
+            'type_id' => ['required', 'exists:job_types,id'],
+            'status' => ['in:active,inactive'],
+        ], [
+            'job_name.required' => 'حقل اسم الوظيفة مطلوب.',
+            'job_name.string' => 'يجب أن يكون اسم الوظيفة نصًا.',
+            'job_name.max' => 'قد لا يكون اسم الوظيفة أكبر من 255 حرفًا.',
+            'type_id.required' => 'حقل نوع الوظيفة مطلوب.',
+            'type_id.exists' => 'النوع المحدد للوظيفة غير موجود.',
+            'status.in' => 'يجب أن تكون الحالة إما "نشطة" أو "غير نشطة".',
+        ]);
+
 
         Job::create([
             'job_name' => $request->job_name,

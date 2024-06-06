@@ -25,18 +25,19 @@ class AircraftController extends Controller
             'aircraft_name' => ['required', 'string', 'max:255'],
             'aircraft_code' => ['required', 'string', 'max:255'],
         ], [
-            'aircraft_name.required' => 'The aircraft name field is required.',
-            'aircraft_name.string' => 'The aircraft name must be a string.',
-            'aircraft_name.max' => 'The aircraft name may not be greater than 255 characters.',
-            'aircraft_code.required' => 'The aircraft code field is required.',
-            'aircraft_code.string' => 'The aircraft code must be a string.',
-            'aircraft_code.max' => 'The aircraft code may not be greater than 255 characters.',
+            'aircraft_name.required' => 'حقل اسم الطائرة مطلوب.',
+            'aircraft_name.string' => 'يجب أن يكون اسم الطائرة نصًا.',
+            'aircraft_name.max' => 'قد لا يكون اسم الطائرة أكبر من 255 حرفًا.',
+            'aircraft_code.required' => 'حقل رمز الطائرة مطلوب.',
+            'aircraft_code.string' => 'يجب أن يكون رمز الطائرة نصًا.',
+            'aircraft_code.max' => 'قد لا يكون رمز الطائرة أكبر من 255 حرفًا.',
         ]);
+
 
         Aircraft::create([
             'aircraft_name' => $validatedData['aircraft_name'],
             'aircraft_code' => $validatedData['aircraft_code'],
-            'user_id' => Auth::id(),
+            'user_id' => Auth::guard('web')->id(),
         ]);
 
         return redirect()->route('aircraft.create')->with('success', 'Aircraft Created Successfully');
