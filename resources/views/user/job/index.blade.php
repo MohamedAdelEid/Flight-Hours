@@ -21,7 +21,7 @@
             </h2>
 
             {{-- Start table --}}
-            <div class="w-full overflow-hidden rounded-lg shadow-xs">
+            {{-- <div class="w-full overflow-hidden rounded-lg shadow-xs">
                 <div class="w-full overflow-x-auto">
                     <table class="w-full whitespace-no-wrap yajra-datatable" id="myTable">
                         <thead>
@@ -137,9 +137,11 @@
 
                         </tbody>
                     </table>
-                </div>
+                </div> --}}
 
-                {{-- <div
+            <livewire:job-table />
+
+            {{-- <div
                     class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
                     <span class="flex items-center col-span-3">
                         Showing 21-30 of 100
@@ -210,8 +212,8 @@
                     </span>
                 </div> --}}
 
-            </div>
-            {{-- End table --}}
+        </div>
+        {{-- End table --}}
 
         </div>
     </main>

@@ -8,15 +8,13 @@
                         <div class="relative w-full">
                             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                 <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400"
-                                     fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
-                                          d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                          clip-rule="evenodd" />
+                                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                        clip-rule="evenodd" />
                                 </svg>
                             </div>
-                            <input
-                                wire:model.live.debounce.300ms = 'search'
-                                type="text"
+                            <input wire:model.live.debounce.300ms = '  search' type="text"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full ps-5 p-2 "
                                 placeholder="Search" required="">
                         </div>
@@ -26,40 +24,43 @@
                     <div class="table-responsive" data-simplebar style="max-height: 1000px; overflow-y: auto;">
                         <table class="table table-borderless table-hover align-middle text-nowrap">
                             <thead class="text-xs text-mode uppercase bg-third-dark">
-                            <tr>
-                                <th scope="col" class="fs-3 fw-bold px-4 py-3">Name</th>
-                                <th scope="col" class="fs-3 fw-bold px-4 py-3">Job Type</th>
-                                <th scope="col" class="fs-3 fw-bold px-4 py-3">Status</th>
-                                <th scope="col" class="fs-3 fw-bold px-4 py-3 text-center">Creation Date</th>
-                                <th scope="col" class="fs-3 fw-bold px-4 py-3 text-center">Last update</th>
-                                <th scope="col" class="fs-3 fw-bold px-4 py-3 text-center">Actions</th>
-                            </tr>
+                                <tr>
+                                    <th scope="col" class="fs-3 fw-bold px-4 py-3">Name</th>
+                                    <th scope="col" class="fs-3 fw-bold px-4 py-3">Job Type</th>
+                                    <th scope="col" class="fs-3 fw-bold px-4 py-3">Status</th>
+                                    <th scope="col" class="fs-3 fw-bold px-4 py-3 text-center">Creation Date</th>
+                                    <th scope="col" class="fs-3 fw-bold px-4 py-3 text-center">Last update</th>
+                                    <th scope="col" class="fs-3 fw-bold px-4 py-3 text-center">Actions</th>
+                                </tr>
                             </thead>
                             <tbody>
-                            @if($jobs->isEmpty())
-                                <tr>
-                                    <td colspan="10" class="text-center py-4">No Jobs Found.</td>
-                                </tr>
-                            @else
-                                @foreach($jobs as $job)
-                                    <tr wire:key="{{$job->id}}" class="border-b border-gray-800 text-mode">
-                                        <th scope="row"
-                                            class="fs-3 px-4 py-3 font-medium whitespace-nowrap">
-                                            {{$job->job_name}}</th>
-                                        <td class="px-4 py-3 text-center">{{$job->job_type->job_type}}</td>
-                                        <td class="px-4 py-3 text-center">{{$job->status}}</td>
-                                        <td class="px-4 py-3 text-center">{{$job->created_at->format('Y-m-d')}}</td>
-                                        <td class="px-4 py-3 text-center">{{$job->updated_at->format('Y-m-d')}}</td>
-                                        <td class="py-3 flex items-center justify-center">
-                                            <a href="{{route('job.edit',$job->id)}}" class="me-1 py-1" ><p class="edit"><i class="ti ti-edit"></i> Edit</p></a>
-                                            <button  wire:click="delete({{$job->id}})"
-                                                     class="ms-1 py-1"><p class="delete"><i class="ti ti-trash me-1">
-                                                    </i>Delete</p>
-                                            </button>
-                                        </td>
+                                @if ($jobs->isEmpty())
+                                    <tr>
+                                        <td colspan="10" class="text-center py-4">No Jobs Found.</td>
                                     </tr>
-                                @endforeach
-                            @endif
+                                @else
+                                    @foreach ($jobs as $job)
+                                        <tr wire:key="{{ $job->id }}" class="border-b border-gray-800 text-mode">
+                                            <th scope="row" class="fs-3 px-4 py-3 font-medium whitespace-nowrap">
+                                                {{ $job->job_name }}</th>
+                                            <td class="px-4 py-3 text-center">{{ $job->job_type->job_type }}</td>
+                                            <td class="px-4 py-3 text-center">{{ $job->status }}</td>
+                                            <td class="px-4 py-3 text-center">{{ $job->created_at->format('Y-m-d') }}
+                                            </td>
+                                            <td class="px-4 py-3 text-center">{{ $job->updated_at->format('Y-m-d') }}
+                                            </td>
+                                            <td class="py-3 flex items-center justify-center">
+                                                <a href="{{ route('job.edit', $job->id) }}" class="me-1 py-1">
+                                                    <p class="edit"><i class="ti ti-edit"></i> Edit</p>
+                                                </a>
+                                                <button wire:click="delete({{ $job->id }})" class="ms-1 py-1">
+                                                    <p class="delete"><i class="ti ti-trash me-1">
+                                                        </i>Delete</p>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                @endif
 
                             </tbody>
                         </table>
@@ -69,8 +70,7 @@
                     <div class="flex ">
                         <div class="flex space-x-4 items-center mb-3">
                             <label class="w-32 text-sm font-medium text-mode">Per Page</label>
-                            <select
-                                wire:model.live ="perPage"
+                            <select wire:model.live ="perPage"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
                                 <option value="5">5</option>
                                 <option value="10">10</option>
@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 <div>
-                    {{$jobs->links()}}
+                    {{ $jobs->links() }}
                 </div>
             </div>
         </div>

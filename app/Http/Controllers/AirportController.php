@@ -28,7 +28,7 @@ class AirportController extends Controller
             'airport_name.required' => 'حقل اسم المطار مطلوب.',
             'airport_name.string' => 'يجب أن يكون اسم المطار نصًا.',
             'airport_name.max' => 'قد لا يكون اسم المطار أكبر من 255 حرفًا.',
-            'airport_code.required' => 'حقل رمز المطار مطلوب.',
+            'airport_code.required' => 'حقل كود المطار مطلوب.',
             'airport_code.string' => 'يجب أن يكون رمز المطار نصًا.',
             'airport_code.max' => 'قد لا يكون رمز المطار أكبر من 10 أحرف.',
         ]);
@@ -40,7 +40,7 @@ class AirportController extends Controller
             'user_id' => Auth::id(),
         ]);
 
-        return redirect()->route('airport.create')->with('success', 'Airport Created Successfully');
+        return redirect()->route('airport.index')->with('successCreate', 'تم إضافة المطار بنجاح');
     }
 
     public function show(Airport $airport)

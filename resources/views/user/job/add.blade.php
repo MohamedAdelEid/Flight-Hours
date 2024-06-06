@@ -28,37 +28,58 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-x-6 gap-y-4">
 
                         {{-- job_name --}}
-                        <label class="block text-xl">
-                            <span class="text-gray-700 dark:text-white block mb-2">اسم الوظيفة</span>
-                            <input name="job_name"
-                                class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-blue-400 focus:outline-none focus:shadow-outline-blue dark:text-gray-300 dark:focus:shadow-outline-gray form-input" />
-                        </label>
+                        <div>
+                            <label class="block text-xl">
+                                <span class="text-gray-700 dark:text-white block mb-2">اسم الوظيفة</span>
+                                <input name="job_name"
+                                    class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-blue-400 focus:outline-none focus:shadow-outline-blue dark:text-gray-300 dark:focus:shadow-outline-gray form-input" />
+                            </label>
+                            @error('job_name')
+                                <span class="text-xs text-red-600 dark:text-red-400">
+                                    {{ $message }}
+                                </span>
+                            @enderror
+                        </div>
 
-                        <label class="block text-xl">
-                            <span class="text-gray-700 dark:text-white block mb-2">
-                                نوع الوظيفة
-                            </span>
-                            <select name="type_id"
-                                class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-blue-400 focus:outline-none focus:shadow-outline-blue dark:focus:shadow-outline-gray">
-                                @forelse($job_types as $job_type)
-                                    <option value="{{ $job_type->id }}">{{ $job_type->job_type }}</option>
-                                @empty
-                                    <option disabled >لا يوجد نوع وظيفة</option>
-                                @endforelse
-                            </select>
-                        </label>
+                        <div>
+                            <label class="block text-xl">
+                                <span class="text-gray-700 dark:text-white block mb-2">
+                                    نوع الوظيفة
+                                </span>
+                                <select name="type_id"
+                                    class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-blue-400 focus:outline-none focus:shadow-outline-blue dark:focus:shadow-outline-gray">
+                                    @forelse($job_types as $job_type)
+                                        <option value="{{ $job_type->id }}">{{ $job_type->job_type }}</option>
+                                    @empty
+                                        <option disabled>لا يوجد نوع وظيفة</option>
+                                    @endforelse
+                                </select>
+                            </label>
+                            @error('type_id')
+                                <span class="text-xs text-red-600 dark:text-red-400">
+                                    {{ $message }}
+                                </span>
+                            @enderror
+                        </div>
 
-                        <label class="block text-xl">
-                            <span class="text-gray-700 dark:text-white block mb-2">
-                                حالة الوظيفة
-                            </span>
-                            <select id="job-status" name="status"
-                                class="block w-full mt-1 text-sm dark:text-gray-300 dark:bg-gray-700 form-select focus:border-blue-400 focus:outline-none focus:shadow-outline-blue dark:focus:shadow-outline-gray">
-                                <option disabled selected>اختر الحالة</option>
-                                <option value="active">نشطة</option>
-                                <option value="inactive">غير نشطة</option>
-                            </select>
-                        </label>
+                        <div>
+                            <label class="block text-xl">
+                                <span class="text-gray-700 dark:text-white block mb-2">
+                                    حالة الوظيفة
+                                </span>
+                                <select id="job-status" name="status"
+                                    class="block w-full mt-1 text-sm dark:text-gray-300 dark:bg-gray-700 form-select focus:border-blue-400 focus:outline-none focus:shadow-outline-blue dark:focus:shadow-outline-gray">
+                                    <option disabled selected>اختر الحالة</option>
+                                    <option value="active">نشطة</option>
+                                    <option value="inactive">غير نشطة</option>
+                                </select>
+                            </label>
+                            @error('status')
+                                <span class="text-xs text-red-600 dark:text-red-400">
+                                    {{ $message }}
+                                </span>
+                            @enderror
+                        </div>
 
                     </div>
 

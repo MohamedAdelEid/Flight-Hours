@@ -15,6 +15,7 @@ use App\Http\Controllers\front\jobs_categoriecontroller;
 use App\Models\Admin;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\JobTable;
 
 /*
 |--------------------------------------------------------------------------
@@ -88,7 +89,7 @@ Route::prefix('Captain')->name('Captain')->group(function () {
 });
 
 Route::get('/', function () {
-    return view('auth.login-');
+  return view('auth.login-');
 });
 
 Route::get('/dashboard-admin', function () {
@@ -102,3 +103,5 @@ Route::get('/home-page', function () {
 Route::resource('job', JobController::class);
 Route::resource('aircraft', AircraftController::class);
 Route::resource('airport', AirportController::class);
+
+// Route::get('jobs', [JobTable::class, 'render']);
