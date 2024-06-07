@@ -27,28 +27,16 @@ use App\Livewire\JobTable;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-//************* */ Front Design *************************
+
 
 Route::prefix('front')->name('front')->group(function () {
   Route::get('/', FrontHomecontroller::class)->Middleware('auth')->name('index');
-
-  //----------*/ category----
-  Route::get('/category', [jobs_categoriecontroller::class, 'view_jobs'])->Middleware('auth')->name('show');
-  Route::get('/category/add', [jobs_categoriecontroller::class, 'create'])->Middleware('auth')->name('jobs.create');
-  Route::post('/category/add', [jobs_categoriecontroller::class, 'store'])->Middleware('auth')->name('jobs.store');
-  Route::get('/category/edit', [jobs_categoriecontroller::class, 'edit'])->Middleware('auth')->name('jobs.edit');
-
   //----------*/ types ----
   Route::get('/types', [Types_categoriecontroller::class, 'view_types'])->Middleware('auth')->name('view_types');
   Route::get('/types/add', [Types_categoriecontroller::class, 'create'])->Middleware('auth')->name('types.create');
   Route::post('/types/add', [Types_categoriecontroller::class, 'store'])->Middleware('auth')->name('types.store');
   Route::get('/types/edit', [Types_categoriecontroller::class, 'edit'])->Middleware('auth')->name('types.edit');
 
-  //----------*/ Airports ----
-  Route::get('/Airports', [Airports_categoriecontroller::class, 'view_Airports'])->Middleware('auth')->name('view_Airports');
-  Route::get('/Airports/add', [Airports_categoriecontroller::class, 'create'])->Middleware('auth')->name('Airports.create');
-  Route::post('/Airports/add', [Airports_categoriecontroller::class, 'store'])->Middleware('auth')->name('Airports.store');
-  Route::get('/Airports/edit', [Airports_categoriecontroller::class, 'edit'])->Middleware('auth')->name('Airports.edit');
 
   //----------*/ employees ----
   Route::get('/Employee', [Employeecontroller::class, 'Employee_index'])->Middleware('auth')->name('Employee.index');
@@ -61,11 +49,6 @@ Route::prefix('front')->name('front')->group(function () {
 
 });
 require __DIR__ . '/auth.php';
-
-//***************** +++++++++++++++++++++++++++++++++++++++++++++++++++++ ******************
-
-//***************** */ Admin Design ******************
-
 Route::prefix('admin')->name('admin')->group(function () {
   Route::get('/', backHomecontroller::class)->Middleware('admin')->name('index');
 
@@ -75,9 +58,6 @@ Route::prefix('admin')->name('admin')->group(function () {
   require __DIR__ . '/Adminauth.php';
 });
 
-//***************** +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++******************
-
-//***************** */ Captain Design ******************
 
 Route::prefix('Captain')->name('Captain')->group(function () {
   Route::get('/', CaptinHomecontroller::class)->Middleware('captin')->name('index');
@@ -103,8 +83,5 @@ Route::get('/home-page', function () {
 Route::resource('job', JobController::class);
 Route::resource('aircraft', AircraftController::class);
 Route::resource('airport', AirportController::class);
-
-// Route::get('jobs', [JobTable::class, 'render']);
-// routes/web.php
 
 Route::get('/jobs', [JobTable::class , 'render']);

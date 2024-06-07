@@ -28,17 +28,32 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-x-6 gap-y-4">
 
                         {{-- aircraft_name --}}
-                        <label class="block text-xl">
-                            <span class="text-gray-700 dark:text-white block mb-2">اسم الطائرة</span>
-                            <input name="aircraft_name"
-                                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-blue-400 focus:outline-none focus:shadow-outline-blue dark:text-gray-300 dark:focus:shadow-outline-gray form-input" />
-                        </label>
-
+                        <div>
+                            <label class="block text-xl">
+                                <span class="text-gray-700 dark:text-white block mb-2">اسم الطائرة</span>
+                                <input name="aircraft_name"
+                                       class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-blue-400 focus:outline-none focus:shadow-outline-blue dark:text-gray-300 dark:focus:shadow-outline-gray form-input" />
+                            </label>
+                            @error('aircraft_name')
+                            <span class="text-xs text-red-600 dark:text-red-400">
+                                    {{ $message }}
+                                </span>
+                            @enderror
+                        </div>
+                      <div>
+                          <div>
                         <label class="block text-xl">
                             <span class="text-gray-700 dark:text-white block mb-2">طراز الطائرة</span>
                             <input name="aircraft_code"
                                    class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-blue-400 focus:outline-none focus:shadow-outline-blue dark:text-gray-300 dark:focus:shadow-outline-gray form-input" />
                         </label>
+                        @error('aircraft_code')
+                        <span class="text-xs text-red-600 dark:text-red-400">
+                                    {{ $message }}
+                                </span>
+                        @enderror
+                    </div>
+
                     </div>
 
                     <button

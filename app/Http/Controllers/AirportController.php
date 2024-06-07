@@ -23,7 +23,7 @@ class AirportController extends Controller
     {
         $validatedData = $request->validate([
             'airport_name' => ['required', 'string', 'max:255'],
-            'airport_code' => ['required', 'string', 'max:10'],
+            'airport_code' => ['required', 'string', 'max:10','unique:airports,airport_code'],
         ], [
             'airport_name.required' => 'حقل اسم المطار مطلوب.',
             'airport_name.string' => 'يجب أن يكون اسم المطار نصًا.',
@@ -31,6 +31,7 @@ class AirportController extends Controller
             'airport_code.required' => 'حقل كود المطار مطلوب.',
             'airport_code.string' => 'يجب أن يكون رمز المطار نصًا.',
             'airport_code.max' => 'قد لا يكون رمز المطار أكبر من 10 أحرف.',
+            'airport_code.unique' => 'لا يمكن تكرار هذا الكود لاكثر من مطار'
         ]);
 
 
