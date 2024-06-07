@@ -35,4 +35,4 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     {{-- link livewire style --}}
-    <livewire:styles />
+    @livewireStyles

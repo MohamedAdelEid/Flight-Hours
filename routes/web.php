@@ -105,3 +105,6 @@ Route::resource('aircraft', AircraftController::class);
 Route::resource('airport', AirportController::class);
 
 // Route::get('jobs', [JobTable::class, 'render']);
+// routes/web.php
+
+Route::get('/jobs', [JobTable::class , 'render']);

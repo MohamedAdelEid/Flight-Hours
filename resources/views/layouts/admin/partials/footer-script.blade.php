@@ -16,30 +16,6 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 {{-- include scripts livewire --}}
-<script src="{{ asset('vendor/livewire/livewire.min.js') }}"
-    data-csrf="y8KH7nAAO9qytd3Va8ly5DtLWnllPl0DJA6wAJSO" data-update-uri="/livewire/update" data-navigate-once="true">
-</script>
+@livewireScripts
 
-<script src="{{ asset('vendor/livewire/livewire.min.js.map') }}" data-csrf="y8KH7nAAO9qytd3Va8ly5DtLWnllPl0DJA6wAJSO"
-    data-update-uri="/livewire/update" data-navigate-once="true"></script>
 
-<script src="{{ asset('vendor/livewire/livewire.js') }}" data-csrf="y8KH7nAAO9qytd3Va8ly5DtLWnllPl0DJA6wAJSO"
-    data-update-uri="/livewire/update" data-navigate-once="true"></script>
-
-<script src="{{ asset('vendor/livewire/livewire.min.js.map') }}" data-csrf="y8KH7nAAO9qytd3Va8ly5DtLWnllPl0DJA6wAJSO"
-    data-update-uri="/livewire/update" data-navigate-once="true"></script>
-
-<script src="{{ asset('vendor/livewire/livewire.esm.js') }}" data-csrf="y8KH7nAAO9qytd3Va8ly5DtLWnllPl0DJA6wAJSO"
-    data-update-uri="/livewire/update" data-navigate-once="true"></script>
-
-<script>
-    Livewire.onPageExpired((response, message) => {})
-</script>
-
-<script>
-    document.addEventListener('livewire:load', () => {
-        Livewire.onPageExpired((response, message) => {})
-    })
-</script>
-
-<livewire:scripts />
